@@ -1,0 +1,13 @@
+<div>
+  <div class="loader-container" *ngIf="loading">
+    <div class="loader"></div>
+  </div>
+
+  <app-user-card
+    [users]="users"
+    [weather]="weather"
+    [showSaveButton]="true"
+    (saveUserClick)="saveUser()"
+    *ngIf="weather && users && !loading"
+  ></app-user-card>
+</div>

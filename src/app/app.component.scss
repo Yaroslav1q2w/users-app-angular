@@ -1,0 +1,22 @@
+.section {
+  background: var(--background, #293b2b);
+
+  .header {
+    background: linear-gradient(to bottom, #000, #223325);
+
+    &__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+  }
+
+  .main {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 40px 80px;
+  }
+}

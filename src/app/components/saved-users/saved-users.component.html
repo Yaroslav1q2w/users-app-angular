@@ -1,0 +1,15 @@
+<div class="saved-users">
+  <div class="saved-users__list">
+    <div *ngFor="let user of savedUserData">
+      <app-user-card
+        [users]="user.user"
+        [showSaveButton]="false"
+        [weather]="user.weather"
+      ></app-user-card>
+    </div>
+  </div>
+
+  <div *ngIf="savedUserData.length < 1" class="saved-users__empty">
+    The customer list is empty.
+  </div>
+</div>

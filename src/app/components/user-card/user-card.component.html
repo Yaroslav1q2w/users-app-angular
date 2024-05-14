@@ -1,0 +1,63 @@
+<div class="profile">
+  <div class="profile__content" *ngIf="users && weather">
+    <div class="profile__info">
+      <img
+        [src]="users.picture.large"
+        alt="User Image"
+        class="profile__image"
+      />
+      <div class="description">
+        <h2 class="description__name">
+          {{ users.name.first }} {{ users.name.last }}
+        </h2>
+        <div class="description__detail">
+          <span class="description__detail-color">Gender:</span>
+          {{ users.gender }}
+        </div>
+        <div class="description__detail">
+          <span class="description__detail-color">Email:</span>
+          {{ users.email }}
+        </div>
+        <div class="description__detail">
+          <span class="description__detail-color">Location:</span>
+          {{ users.location.city }},
+          {{ users.location.country }}
+        </div>
+      </div>
+    </div>
+
+    <div class="weather">
+      <h3 class="weather__title">Weather</h3>
+
+      <div class="weather__icon">
+        <img
+          [src]="getWeatherIcon(weather.current_weather.weathercode)"
+          alt="Weather Icon"
+          class="weather__icon-elem"
+        />
+      </div>
+
+      <div class="weather__temp">
+        <span class="weather__temp-color">Current:</span>
+        {{ weather.current_weather.temperature }}°C
+      </div>
+
+      <div class="weather__temp">
+        <span class="weather__temp-color">Low:</span>
+        {{ weather.daily.temperature_2m_min[0] }}°C
+      </div>
+      <div class="weather__temp">
+        <span class="weather__temp-color">High:</span>
+        {{ weather.daily.temperature_2m_max[0] }}°C
+      </div>
+    </div>
+
+    <button
+      *ngIf="showSaveButton"
+      (click)="onSaveUserClick()"
+      class="profile__button"
+    >
+      Save
+    </button>
+  </div>
+</div>

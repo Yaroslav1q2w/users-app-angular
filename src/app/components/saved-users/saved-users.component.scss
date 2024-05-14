@@ -1,0 +1,28 @@
+.saved-users {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;
+
+    @media screen and (max-width: 920px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+
+    @media screen and (max-width: 920px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 640px) {
+      font-size: 20px;
+    }
+  }
+}
